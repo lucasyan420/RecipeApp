@@ -10,6 +10,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RecipesApp">
         <activity
+            android:name=".Controllers.PetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Controllers.AddRecipeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Controllers.AddDefaultRecipeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Controllers.DefaultRecipeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Controllers.CookingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Controllers.RecipesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Controllers.PetCreationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Controllers.SignUpActivity"
+            android:exported="false" />
+        <activity
             android:name=".Controllers.LoginActivity"
             android:exported="true">
             <intent-filter>
