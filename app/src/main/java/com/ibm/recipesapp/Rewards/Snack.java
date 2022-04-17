@@ -1,4 +1,6 @@
 package com.ibm.recipesapp.Rewards;
 
-public class Snack {
+import java.io.Serializable;
+
+public class Snack implements Serializable {
 }

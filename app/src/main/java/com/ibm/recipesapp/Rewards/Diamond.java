@@ -1,4 +1,6 @@
 package com.ibm.recipesapp.Rewards;
 
-public class Diamond {
+import java.io.Serializable;
+
+public class Diamond implements Serializable {
 }

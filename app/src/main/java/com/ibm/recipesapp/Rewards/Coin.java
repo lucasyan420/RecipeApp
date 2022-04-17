@@ -1,4 +1,6 @@
 package com.ibm.recipesapp.Rewards;
 
-public class Coin {
+import java.io.Serializable;
+
+public class Coin implements Serializable {
 }
