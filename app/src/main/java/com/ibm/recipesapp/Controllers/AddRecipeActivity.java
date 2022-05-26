@@ -130,7 +130,7 @@ public class AddRecipeActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.VISIBLE);
 
                 final String randomKey = UUID.randomUUID().toString();
-                StorageReference riversRef = storageReference.child("recipe_mages/" + randomKey);
+                StorageReference riversRef = storageReference.child("recipe_images/" + randomKey);
 
                 riversRef.putFile(imageUri).addOnSuccessListener(taskSnapshot -> {
                     progressBar.setVisibility((View.INVISIBLE));
