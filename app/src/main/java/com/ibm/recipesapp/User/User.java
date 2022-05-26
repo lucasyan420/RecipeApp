@@ -5,6 +5,7 @@ import com.ibm.recipesapp.Rewards.Pet;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class User implements Serializable {
     String userID;
@@ -22,6 +23,10 @@ public class User implements Serializable {
         this.userID = userID;
         this.userName = userName;
         this.userEmail = userEmail;
+        this.userSelectedPet = "";
+        this.userPet = new Pet("", UUID.randomUUID().toString());
+        this.userRecipes = new ArrayList<>();
+        this.userPoints = 0;
     }
 
     public User(String userID, String userName, String userEmail, String userSelectedPet, Pet userPet, ArrayList<Recipe> userRecipes, int userPoints) {
