@@ -1,5 +1,7 @@
 package com.ibm.recipesapp;
 
+import android.text.method.ScrollingMovementMethod;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -11,6 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.ibm.recipesapp.Recipe.Recipe;
 
 import java.util.ArrayList;
+
+import com.bumptech.glide.Glide;
+
 
 public class defaultRecipesRecyclerAdapter extends RecyclerView.Adapter<defaultRecipesRecyclerAdapter.ViewHolder> {
     private ArrayList<Recipe> recipeList;
@@ -27,6 +32,10 @@ public class defaultRecipesRecyclerAdapter extends RecyclerView.Adapter<defaultR
 
         public ViewHolder(final View view){
             super(view);
+
+            recipeName = view.findViewById(R.id.recipeName_TextView_RecipesItems);
+            recipeName.setMovementMethod(new ScrollingMovementMethod());
+            recipeImage = view.findViewById(R.id.defaultRecipe_ImageView_DefaultRecipesItems);
             view.setOnClickListener(this);
         }
 
@@ -39,12 +48,16 @@ public class defaultRecipesRecyclerAdapter extends RecyclerView.Adapter<defaultR
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View recipeView = LayoutInflater.from(parent.getContext()).inflate(R.layout.default_recipes_items, parent, false);
+        return new ViewHolder(recipeView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+        String recipeName = recipeList.get(position).getRecipeName();
+        String recipeImageString = recipeList.get(position).getRecipeImage();
+        holder.recipeName.setText(recipeName);
+        Glide.with(holder.recipeImage.getContext()).load(recipeImageString).centerCrop().into(holder.recipeImage);
     }
 
     @Override

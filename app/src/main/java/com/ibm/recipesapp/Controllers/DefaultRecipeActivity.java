@@ -7,11 +7,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
+import android.widget.TextView;
 
 import com.ibm.recipesapp.R;
 import com.ibm.recipesapp.Recipe.Recipe;
 import com.ibm.recipesapp.User.User;
+import com.ibm.recipesapp.defaultRecipesRecyclerAdapter;
 import com.ibm.recipesapp.recipesRecyclerAdapter;
 
 import java.util.ArrayList;
@@ -19,7 +22,7 @@ import java.util.ArrayList;
 public class DefaultRecipeActivity extends AppCompatActivity {
     private ArrayList<Recipe> recipeList;
     private RecyclerView recyclerView;
-    private recipesRecyclerAdapter.RecyclerViewClickListener listener;
+    private defaultRecipesRecyclerAdapter.RecyclerViewClickListener listener;
     User user;
 
     private String tacosImageURL = "https://firebasestorage.googleapis.com/v0/b/recipeapp-53903.appspot.com/o/default_recipe_images%2Ftaco.png?alt=media&token=e09fe08b-6c7d-4202-adf0-7ef71605142d";
@@ -57,7 +60,7 @@ public class DefaultRecipeActivity extends AppCompatActivity {
     private void setAdapter(){
         setOnClickListener();
 
-        recipesRecyclerAdapter adapter = new recipesRecyclerAdapter(recipeList, listener);
+        defaultRecipesRecyclerAdapter adapter = new defaultRecipesRecyclerAdapter(recipeList,listener);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
 
         recyclerView.setLayoutManager(layoutManager);

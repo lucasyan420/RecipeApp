@@ -119,7 +119,20 @@ public class RecipesActivity extends AppCompatActivity {
     }
 
     private void setOnClickListener(){
-
+        listener = (v, position) ->
+        {
+            Intent intent = new Intent(getApplicationContext(), CookingActivity.class);
+            intent.putExtra("Time", String.valueOf(recipeList.get(position).getRecipeTime()));
+            intent.putExtra("Points", String.valueOf(recipeList.get(position).getRecipePoints()));
+            intent.putExtra("Name", recipeList.get(position).getRecipeName());
+            intent.putExtra("Image", recipeList.get(position).getRecipeImage());
+            intent.putExtra("Recipe ID", recipeList.get(position).getRecipeID());
+            intent.putExtra("User", user);
+            intent.putExtra("Pet", userPet);
+            intent.putExtra("User ID", user.getUserID());
+            intent.putExtra("Position", position);
+            startActivity(intent);
+        };
     }
 
     private void setPetImage(User user) {

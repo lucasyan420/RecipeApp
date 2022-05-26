@@ -20,8 +20,8 @@
     <TextView
         android:id="@+id/addRecipes_TextView_AddRecipeActivity"
         android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="15dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="@string/add_recipes"
         android:textColor="@color/black"
@@ -203,8 +203,8 @@
 
     <ImageView
         android:id="@+id/recipePhoto_ImageView_AddRecipeActivity"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
