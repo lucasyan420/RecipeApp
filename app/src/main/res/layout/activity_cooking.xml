@@ -6,15 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Controllers.CookingActivity">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/startTimer_Button_TimerActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_play_button"
-        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck"
-        tools:layout_editor_absoluteX="165dp"
-        tools:layout_editor_absoluteY="587dp" />
-
     <TextView
         android:id="@+id/points_TextView_CookingActivity"
         android:layout_width="100dp"
@@ -96,6 +87,7 @@
         app:srcCompat="@drawable/icons8_christmas_star_48" />
 
     <me.zhanghai.android.materialprogressbar.MaterialProgressBar
+        android:id="@+id/materialProgressBar"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="30dp"
@@ -104,20 +96,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recipePhoto_ImageView_CookingActivity" />
 
-    <ImageView
-        android:id="@+id/imageView4"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/icons8_pause_24"
-        tools:layout_editor_absoluteX="73dp"
-        tools:layout_editor_absoluteY="399dp" />
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialProgressBar"
+        app:srcCompat="@drawable/ic_play_button" />
 
-    <ImageView
-        android:id="@+id/imageView6"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/icons8_stop_circled_24"
-        tools:layout_editor_absoluteX="287dp"
-        tools:layout_editor_absoluteY="387dp" />
+        android:clickable="true"
+        app:srcCompat="@drawable/icons8_pause_24"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="419dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:srcCompat="@drawable/icons8_stop_24"
+        tools:layout_editor_absoluteX="259dp"
+        tools:layout_editor_absoluteY="418dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

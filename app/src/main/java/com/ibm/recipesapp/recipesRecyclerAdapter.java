@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class recipesRecyclerAdapter extends RecyclerView.Adapter<recipesRecyclerAdapter.ViewHolder> {
     private ArrayList<Recipe> recipeList;
-    private RecyclerViewClickListener listener;
+    private recipesRecyclerAdapter.RecyclerViewClickListener listener;
 
     public recipesRecyclerAdapter(ArrayList<Recipe> recipeList, RecyclerViewClickListener listener){
         this.recipeList = recipeList;
@@ -33,6 +33,8 @@ public class recipesRecyclerAdapter extends RecyclerView.Adapter<recipesRecycler
             recipeName = view.findViewById(R.id.recipeName_TextView_RecipesItems);
             recipePhoto = view.findViewById(R.id.recipePhoto_ImageView_RecipeItems);
 
+            recipeName.setText("Hello world");
+
             view.setOnClickListener(this);
         }
 
@@ -45,8 +47,8 @@ public class recipesRecyclerAdapter extends RecyclerView.Adapter<recipesRecycler
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recipes_items, parent, false);
-        return new ViewHolder(itemView);
+        View recipeView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recipes_items, parent, false);
+        return new ViewHolder(recipeView);
     }
 
     @Override
@@ -60,7 +62,7 @@ public class recipesRecyclerAdapter extends RecyclerView.Adapter<recipesRecycler
 
     @Override
     public int getItemCount() {
-        return 0;
+        return recipeList.size();
     }
 
     public interface RecyclerViewClickListener
