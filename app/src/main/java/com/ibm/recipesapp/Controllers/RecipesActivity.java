@@ -138,6 +138,33 @@ public class RecipesActivity extends AppCompatActivity {
     }
 
     private void setPetImage(User user) {
+        switch(user.getUserSelectedPet())
+        {
+            case "dog":
+                goPetActivityButton.setImageResource(R.drawable.dog);
+                break;
+            case "cat":
+                goPetActivityButton.setImageResource(R.drawable.cat);
+                break;
+            case "hamster":
+                goPetActivityButton.setImageResource(R.drawable.hamster);
+                break;
+            case "unicorn":
+                goPetActivityButton.setImageResource(R.drawable.unicorn);
+                break;
+            case "parrot":
+                goPetActivityButton.setImageResource(R.drawable.parrot);
+                break;
+            case "pig":
+                goPetActivityButton.setImageResource(R.drawable.pig);
+                break;
+        }
+    }
+
+    public void goToPetActivity(View view){
+        Intent goToPetActivity = new Intent(this, PetActivity.class);
+        goToPetActivity.putExtra("user", user);
+        startActivity(goToPetActivity);
     }
 
     public void goToDefaultRecipeActivity(View view){

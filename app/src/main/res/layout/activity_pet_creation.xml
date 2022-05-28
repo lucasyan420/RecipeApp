@@ -51,7 +51,7 @@
         android:onClick="selectedPet"
         app:layout_constraintEnd_toStartOf="@+id/dog_ImageView_PetCreationActivity"
         app:layout_constraintTop_toBottomOf="@+id/text2_TextView_PetCreationActivity"
-        app:srcCompat="@drawable/_27487"
+        app:srcCompat="@drawable/parrot"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageView
@@ -64,7 +64,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text2_TextView_PetCreationActivity"
-        app:srcCompat="@drawable/_31b0deb8237ddf15c50144101338f4a"
+        app:srcCompat="@drawable/dog"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageView
@@ -76,7 +76,7 @@
         android:onClick="selectedPet"
         app:layout_constraintStart_toEndOf="@+id/dog_ImageView_PetCreationActivity"
         app:layout_constraintTop_toBottomOf="@+id/text2_TextView_PetCreationActivity"
-        app:srcCompat="@drawable/_77153"
+        app:srcCompat="@drawable/unicorn"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageView
@@ -88,7 +88,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dog_ImageView_PetCreationActivity"
-        app:srcCompat="@drawable/_960025"
+        app:srcCompat="@drawable/pig"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageView
@@ -100,7 +100,7 @@
         android:onClick="selectedPet"
         app:layout_constraintEnd_toStartOf="@+id/pig_ImageView_PetCreationActivity"
         app:layout_constraintTop_toBottomOf="@+id/parrot_ImageView_PetCreationActivity"
-        app:srcCompat="@drawable/_959988"
+        app:srcCompat="@drawable/hamster"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageView
@@ -112,7 +112,7 @@
         android:onClick="selectedPet"
         app:layout_constraintStart_toEndOf="@+id/pig_ImageView_PetCreationActivity"
         app:layout_constraintTop_toBottomOf="@+id/unicorn_ImageView_PetCreationActivity"
-        app:srcCompat="@drawable/_998592"
+        app:srcCompat="@drawable/cat"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
