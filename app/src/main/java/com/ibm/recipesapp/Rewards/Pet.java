@@ -63,9 +63,11 @@ public class Pet implements Serializable {
         return petPoints;
     }
 
-    public void setPetPoints(int petPoints) {
-        this.petPoints = petPoints;
+    public void addPetPoints(int newPoints) {
+        this.petPoints += newPoints;
     }
+
+    public void minusPetPoints(int newPoints) {this.petPoints -= newPoints; }
 
     public Diamond getPetDiamond() {
         return petDiamond;

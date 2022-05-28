@@ -127,6 +127,8 @@ public class RecipesActivity extends AppCompatActivity {
             intent.putExtra("Name", recipeList.get(position).getRecipeName());
             intent.putExtra("Image", recipeList.get(position).getRecipeImage());
             intent.putExtra("Recipe ID", recipeList.get(position).getRecipeID());
+            intent.putExtra("Recipe Ingredients", recipeList.get(position).getRecipeIngredients());
+            intent.putExtra("Recipe Steps", recipeList.get(position).getRecipeSteps());
             intent.putExtra("User", user);
             intent.putExtra("Pet", userPet);
             intent.putExtra("User ID", user.getUserID());
