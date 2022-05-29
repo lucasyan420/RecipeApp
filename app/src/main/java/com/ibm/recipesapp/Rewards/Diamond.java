@@ -3,17 +3,57 @@ package com.ibm.recipesapp.Rewards;
 import java.io.Serializable;
 
 public class Diamond implements Serializable {
-    public String name;
+    private String diamondName;
+    private int diamondAmount;
+    private int diamondCost;
 
-    public Diamond(){
-        this.name = "diamond";
+    public Diamond()
+    {
+        this.diamondName = "diamond";
+        this.diamondAmount = 0;
+        this.diamondCost = 100;
+    }
+
+    public Diamond(String diamondName){
+        this.diamondName = "diamond";
+    }
+
+    public Diamond (String diamondName, int diamondAmount, int diamondCost){
+        this.diamondName = "diamond";
+        this.diamondAmount = diamondAmount;
+        this.diamondCost = diamondCost;
     }
 
     public String getName() {
-        return name;
+        return diamondName;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.diamondName = name;
+    }
+
+    public int getDiamondAmount() {
+        return diamondAmount;
+    }
+
+    public void setDiamondAmount(int diamondAmount) {
+        this.diamondAmount = diamondAmount;
+    }
+
+    public int getDiamondCost() {
+        return diamondCost;
+    }
+
+    public void setDiamondCost(int diamondCost) {
+        this.diamondCost = diamondCost;
+    }
+
+    @Override
+    public String toString() {
+        return "Diamond{" +
+                "diamondName='" + diamondName + '\'' +
+                ", diamondAmount=" + diamondAmount +
+                ", diamondCost=" + diamondCost +
+                '}';
     }
 }

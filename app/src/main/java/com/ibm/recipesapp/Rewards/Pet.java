@@ -7,14 +7,14 @@ public class Pet implements Serializable {
     String petID;
     int petPoints;
     Diamond petDiamond;
-    Coin petCoin;
+    TeddyBear petTeddyBear;
     Snack petSnack;
 
     public Pet() {
         this.petName = null;
         this.petID = null;
         this.petDiamond = new Diamond();
-        this.petCoin = new Coin();
+        this.petTeddyBear = new TeddyBear();
         this.petSnack = new Snack();
     }
 
@@ -22,7 +22,7 @@ public class Pet implements Serializable {
         this.petName = petName;
         this.petID = null;
         this.petDiamond = new Diamond();
-        this.petCoin = new Coin();
+        this.petTeddyBear = new TeddyBear();
         this.petSnack = new Snack();
     }
 
@@ -30,16 +30,16 @@ public class Pet implements Serializable {
         this.petName = petName;
         this.petID = petID;
         this.petDiamond = new Diamond();
-        this.petCoin = new Coin();
+        this.petTeddyBear = new TeddyBear();
         this.petSnack = new Snack();
     }
 
-    public Pet(String petName, String petID, int petPoints, Diamond petDiamond, Coin petCoin, Snack petSnack) {
+    public Pet(String petName, String petID, int petPoints, Diamond petDiamond, TeddyBear petTeddyBear, Snack petSnack) {
         this.petName = petName;
         this.petID = petID;
         this.petPoints = petPoints;
         this.petDiamond = petDiamond;
-        this.petCoin = petCoin;
+        this.petTeddyBear = petTeddyBear;
         this.petSnack = petSnack;
     }
 
@@ -77,12 +77,12 @@ public class Pet implements Serializable {
         this.petDiamond = petDiamond;
     }
 
-    public Coin getPetCoin() {
-        return petCoin;
+    public TeddyBear getPetTeddyBear() {
+        return petTeddyBear;
     }
 
-    public void setPetCoin(Coin petCoin) {
-        this.petCoin = petCoin;
+    public void setPetTeddyBear(TeddyBear petTeddyBear) {
+        this.petTeddyBear = petTeddyBear;
     }
 
     public Snack getPetSnack() {
@@ -100,7 +100,7 @@ public class Pet implements Serializable {
                 ", petID='" + petID + '\'' +
                 ", petPoints=" + petPoints +
                 ", petDiamond=" + petDiamond +
-                ", petCoin=" + petCoin +
+                ", petTeddyBear=" + petTeddyBear +
                 ", petSnack=" + petSnack +
                 '}';
     }

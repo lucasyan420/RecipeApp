@@ -282,7 +282,7 @@ public class CookingActivity extends AppCompatActivity {
         {
             if(recipeID.equals(recipe.getRecipeID()))
             {
-                user.getUserRecipes().remove(recipe);
+//                user.getUserRecipes().remove(recipe);
                 firestore.collection("users").document(user.getUserID()).set(user);
                 break;
             }
