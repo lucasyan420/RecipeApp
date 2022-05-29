@@ -173,6 +173,12 @@ public class RecipesActivity extends AppCompatActivity {
         startActivity(goToDefaultRecipeActivity);
     }
 
+    public void goToMysteryRecipeActivity(View view){
+        Intent goToMysteryRecipeActivity = new Intent(this, MysteryRecipeActivity.class);
+        goToMysteryRecipeActivity.putExtra("user", user);
+        startActivity(goToMysteryRecipeActivity);
+    }
+
     public void signOut(View view){
         mAuth.signOut();
         Intent intent = new Intent(this, LoginActivity.class);
