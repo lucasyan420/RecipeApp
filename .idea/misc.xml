@@ -12,13 +12,14 @@
         <entry key="app/src/main/res/layout/activity_default_recipe.xml" value="0.37787356321839083" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.27998064566349634" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_mystery_recipe.xml" value="0.3805058576058652" />
+        <entry key="app/src/main/res/layout/activity_mystery_recipe.xml" value="0.37271728515625" />
         <entry key="app/src/main/res/layout/activity_pet.xml" value="0.4052614073822465" />
         <entry key="app/src/main/res/layout/activity_pet_creation.xml" value="0.3413957457611526" />
         <entry key="app/src/main/res/layout/activity_recipes.xml" value="0.24070587158203133" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.37045135498046877" />
         <entry key="app/src/main/res/layout/default_recipes_items.xml" value="0.1" />
         <entry key="app/src/main/res/layout/default_recipes_items2.xml" value="0.23233695652173914" />
+        <entry key="app/src/main/res/layout/item_koloda.xml" value="0.21557971014492755" />
         <entry key="app/src/main/res/layout/recipes_items.xml" value="0.23233695652173914" />
       </map>
     </option>
