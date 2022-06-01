@@ -25,6 +25,9 @@ import com.ibm.recipesapp.recipesRecyclerAdapter;
 
 import java.util.ArrayList;
 
+
+// RecipesActivity
+
 public class RecipesActivity extends AppCompatActivity {
     private ArrayList<Recipe> recipeList;
     private RecyclerView recyclerView;

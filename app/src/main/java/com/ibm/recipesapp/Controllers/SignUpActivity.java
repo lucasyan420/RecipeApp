@@ -15,6 +15,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.ibm.recipesapp.R;
 import com.ibm.recipesapp.User.User;
 
+// SignUpActivity
+
 public class SignUpActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseFirestore firestore;

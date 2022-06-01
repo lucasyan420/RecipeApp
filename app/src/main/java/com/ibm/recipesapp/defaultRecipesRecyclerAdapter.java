@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 import com.bumptech.glide.Glide;
 
-
+//DefaultRecipesRecyclerAdapter
 public class defaultRecipesRecyclerAdapter extends RecyclerView.Adapter<defaultRecipesRecyclerAdapter.ViewHolder> {
     private ArrayList<Recipe> recipeList;
     private defaultRecipesRecyclerAdapter.RecyclerViewClickListener listener;

@@ -14,6 +14,8 @@ import com.ibm.recipesapp.R;
 import com.ibm.recipesapp.Rewards.Pet;
 import com.ibm.recipesapp.User.User;
 
+// PetCreationActivity
+
 public class PetCreationActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseFirestore firestore;

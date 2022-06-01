@@ -2,6 +2,8 @@ package com.ibm.recipesapp.Rewards;
 
 import java.io.Serializable;
 
+//Snack
+
 public class Snack implements Serializable {
     private String snackName;
     private int snackAmount;

@@ -15,6 +15,8 @@ import com.ibm.recipesapp.Recipe.Recipe;
 
 import java.util.ArrayList;
 
+// RecipesRecyclerAdapter
+
 public class recipesRecyclerAdapter extends RecyclerView.Adapter<recipesRecyclerAdapter.ViewHolder> {
     private ArrayList<Recipe> recipeList;
     private recipesRecyclerAdapter.RecyclerViewClickListener listener;

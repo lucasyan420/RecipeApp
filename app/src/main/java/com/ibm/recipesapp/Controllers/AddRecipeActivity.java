@@ -29,6 +29,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.UUID;
 
+// AddRecipeActivity
+
 public class AddRecipeActivity extends AppCompatActivity {
     private FirebaseFirestore firestore = FirebaseFirestore.getInstance();
     private FirebaseAuth mauth = FirebaseAuth.getInstance();

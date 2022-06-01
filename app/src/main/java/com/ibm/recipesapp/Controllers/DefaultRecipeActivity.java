@@ -19,6 +19,7 @@ import com.ibm.recipesapp.recipesRecyclerAdapter;
 
 import java.util.ArrayList;
 
+// DefaultRecipeActivity
 public class DefaultRecipeActivity extends AppCompatActivity {
     private ArrayList<Recipe> recipeList;
     private RecyclerView recyclerView;

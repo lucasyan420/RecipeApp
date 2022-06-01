@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
+// MysteryRecipeActivity
 public class MysteryRecipeActivity extends AppCompatActivity {
     User user;
     TextView currentTime;

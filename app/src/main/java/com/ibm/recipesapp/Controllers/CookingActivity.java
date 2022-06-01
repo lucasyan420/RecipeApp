@@ -27,6 +27,9 @@ import java.util.ArrayList;
 
 import me.zhanghai.android.materialprogressbar.MaterialProgressBar;
 
+
+// CookingActivity
+
 public class CookingActivity extends AppCompatActivity {
     User user;
     String userID;

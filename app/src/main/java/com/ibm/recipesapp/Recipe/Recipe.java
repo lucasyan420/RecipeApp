@@ -3,6 +3,8 @@ package com.ibm.recipesapp.Recipe;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+// Recipe
+
 public class Recipe implements Serializable {
     String recipeID;
     String recipeName;

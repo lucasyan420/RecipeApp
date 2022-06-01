@@ -23,6 +23,8 @@ import com.ibm.recipesapp.User.User;
 import java.util.Timer;
 import java.util.TimerTask;
 
+
+// PetActivity
 public class PetActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseFirestore firestore;
