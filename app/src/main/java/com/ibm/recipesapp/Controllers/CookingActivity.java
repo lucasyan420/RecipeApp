@@ -169,7 +169,8 @@ public class CookingActivity extends AppCompatActivity {
             setPreviousTimerLength();
         }
 
-        secondsRemaining = (timerState == TimerState.Running || timerState == TimerState.Paused) ? PrefUtil.getSecondsRemaining(this) : timerLengthSeconds;
+        secondsRemaining = (timerState == TimerState.Running || timerState == TimerState.Paused) ?
+                PrefUtil.getSecondsRemaining(this) : timerLengthSeconds;
         if(secondsRemaining <= 0)
         {
             onTimerFinished();

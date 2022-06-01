@@ -183,33 +183,25 @@ public class MysteryRecipeActivity extends AppCompatActivity {
                 EPoints += 2;
                 LAPoints += 2;
             }
-            else if(recipeImages[count] == R.drawable.la1 || recipeImages[count] == R.drawable.la2 ||
-                    recipeImages[count] == R.drawable.la3 || recipeImages[count] == R.drawable.la4 ||
-                    recipeImages[count] == R.drawable.la5 || recipeImages[count] == R.drawable.la6)
+            else if(recipeImages[count] == R.drawable.la1 || recipeImages[count] == R.drawable.la2 || recipeImages[count] == R.drawable.la3 || recipeImages[count] == R.drawable.la4 || recipeImages[count] == R.drawable.la5 || recipeImages[count] == R.drawable.la6)
             {
                 LAPoints += 5;
                 APoints += 2;
                 ESAPoints += 2;
             }
-            else if(recipeImages[count] == R.drawable.e1 || recipeImages[count] == R.drawable.e2 ||
-                    recipeImages[count] == R.drawable.e3 || recipeImages[count] == R.drawable.e4 ||
-                    recipeImages[count] == R.drawable.e5 || recipeImages[count] == R.drawable.e6)
+            else if(recipeImages[count] == R.drawable.e1 || recipeImages[count] == R.drawable.e2 || recipeImages[count] == R.drawable.e3 || recipeImages[count] == R.drawable.e4 || recipeImages[count] == R.drawable.e5 || recipeImages[count] == R.drawable.e6)
             {
                 EPoints += 5;
                 SAMPoints += 2;
                 APoints += 2;
             }
-            else if(recipeImages[count] == R.drawable.sam1 || recipeImages[count] == R.drawable.sam2 ||
-                    recipeImages[count] == R.drawable.sam3 || recipeImages[count] == R.drawable.sam4 ||
-                    recipeImages[count] == R.drawable.sam5 || recipeImages[count] == R.drawable.sam6)
+            else if(recipeImages[count] == R.drawable.sam1 || recipeImages[count] == R.drawable.sam2 || recipeImages[count] == R.drawable.sam3 || recipeImages[count] == R.drawable.sam4 || recipeImages[count] == R.drawable.sam5 || recipeImages[count] == R.drawable.sam6)
             {
                 SAMPoints += 5;
                 ESAPoints += 2;
                 EPoints += 2;
             }
-            else if(recipeImages[count] == R.drawable.esa1 || recipeImages[count] == R.drawable.esa2 ||
-                    recipeImages[count] == R.drawable.esa3 || recipeImages[count] == R.drawable.esa4 ||
-                    recipeImages[count] == R.drawable.esa5 || recipeImages[count] == R.drawable.esa6)
+            else if(recipeImages[count] == R.drawable.esa1 || recipeImages[count] == R.drawable.esa2 || recipeImages[count] == R.drawable.esa3 || recipeImages[count] == R.drawable.esa4 || recipeImages[count] == R.drawable.esa5 || recipeImages[count] == R.drawable.esa6)
             {
                 ESAPoints += 5;
                 SAMPoints += 2;
