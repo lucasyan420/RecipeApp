@@ -42,6 +42,11 @@ public class SignUpActivity extends AppCompatActivity {
         String password = passwordInput.getText().toString();
         System.out.println(String.format("Sign Up - Email: %s, Password: %s", email, password));
 
+        if(password.length() < 6)
+        {
+            Toast.makeText(this, "Password is too short", Toast.LENGTH_LONG).show();
+        }
+
         if (!name.equals("") && !email.equals("") && !password.equals(""))
         {
             try
@@ -58,6 +63,8 @@ public class SignUpActivity extends AppCompatActivity {
                                 user = new User(uid, name, email);
                                 firestore.collection("users").document(uid).set(user);
                                 goPetCreationActivity(user);
+
+                                Toast.makeText(this, "Sign up successful", Toast.LENGTH_LONG).show();
                             } else
                             {
                                 Log.w("SIGN UP", "createUserWithEmail:failure",

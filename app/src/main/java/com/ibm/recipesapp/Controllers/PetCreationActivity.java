@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -142,19 +143,23 @@ public class PetCreationActivity extends AppCompatActivity {
             System.out.println("this is a test");
 
             String petName = petNameEditText.getText().toString();
+            if(petName.equals("")){
+                Toast.makeText(getApplicationContext(), "Add pet name", Toast.LENGTH_LONG).show();
+            }
+            else{
+                userPet.setPetName(petName);
+                user.setUserPet(userPet);
+                user.setUserSelectedPet(selectedPet);
 
-            userPet.setPetName(petName);
-            user.setUserPet(userPet);
-            user.setUserSelectedPet(selectedPet);
+                firestore.collection("users")
+                        .document(mAuth.getCurrentUser().getUid())
+                        .set(user).addOnCompleteListener(task ->
+                        {
+                            //to be completed
+                        });
 
-            firestore.collection("users")
-                    .document(mAuth.getCurrentUser().getUid())
-                    .set(user).addOnCompleteListener(task ->
-            {
-                //to be completed
-            });
-
-            goTaskActivity();
+                goTaskActivity();
+            }
         } catch (Exception err)
         {
             err.printStackTrace();

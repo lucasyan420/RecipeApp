@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,6 +43,8 @@ public class MysteryRecipeActivity extends AppCompatActivity {
     TextView chooseFavouriteRecipe;
     TextView recommendedRecipe;
 
+    Button mysteryRecipeButton;
+
     int ESAPoints = 0;
     int SAMPoints = 0;
     int EPoints = 0;
@@ -49,6 +52,8 @@ public class MysteryRecipeActivity extends AppCompatActivity {
     int APoints = 0;
 
     int count;
+    int yesCount;
+    int noCount;
 
     int[] recipeImages = {R.drawable.a1, R.drawable.a2, R.drawable.a3, R.drawable.a4, R.drawable.a5, R.drawable.a6,
             R.drawable.la1, R.drawable.la2, R.drawable.la3, R.drawable.la4, R.drawable.la5, R.drawable.la6,
@@ -118,10 +123,14 @@ public class MysteryRecipeActivity extends AppCompatActivity {
         chooseFavouriteRecipe = findViewById(R.id.chooseFavouriteRecipe_TextView_MysteryRecipeActivity);
         recommendedRecipe = findViewById(R.id.recommendedRecipe_TextView_MysteryRecipeActivity);
         recommendedRecipe.setVisibility(View.INVISIBLE);
+        mysteryRecipeButton = findViewById(R.id.discoverMysteryRecipe_Button_MysteryRecipeActivity);
+        mysteryRecipeButton.setVisibility(View.INVISIBLE);
 
         shuffleRecipeImages();
 
         count = 0;
+        yesCount = 0;
+        noCount = 0;
 
         random = new Random();
         randomMysterySlot = random.nextInt(2);
@@ -142,13 +151,13 @@ public class MysteryRecipeActivity extends AppCompatActivity {
         if(6 < currentHour && currentHour< 11){
             currentTimePeriod = "breakfast";
         }
-        else if(11 < currentHour && currentHour < 2){
+        else if(11 < currentHour && currentHour < 14){
             currentTimePeriod = "lunch";
         }
-        else if(2 < currentHour && currentHour < 5){
+        else if(14 < currentHour && currentHour < 17){
             currentTimePeriod = "snack";
         }
-        else if(5 < currentHour && currentHour < 9){
+        else if(17 < currentHour && currentHour < 21){
             currentTimePeriod = "dinner";
         }
         else{
@@ -162,10 +171,12 @@ public class MysteryRecipeActivity extends AppCompatActivity {
         {
             mysteryRecipeImage.setImageResource(recipeImages[count]);
             count++;
+            noCount++;
         }
         else{
             mysteryRecipeImage.setImageResource(R.drawable.mystery_box);
-            Toast.makeText(getApplicationContext(), "You have completed the survey!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "You have completed the survey. Click the discover mystery recipe button!", Toast.LENGTH_SHORT).show();
+            mysteryRecipeButton.setVisibility(View.VISIBLE);
             findFavouriteCuisine();
         }
     }
@@ -212,10 +223,12 @@ public class MysteryRecipeActivity extends AppCompatActivity {
             System.out.println(ESAPoints + "   " + SAMPoints + "   " + EPoints + "    " + LAPoints + "   " + APoints + "   ");
             System.out.println(count);
             count++;
+            yesCount++;
         }
         else{
             mysteryRecipeImage.setImageResource(R.drawable.mystery_box);
-            Toast.makeText(getApplicationContext(), "You have completed the survey!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "You have completed the survey. Click the discover mystery recipe button!", Toast.LENGTH_SHORT).show();
+            mysteryRecipeButton.setVisibility(View.VISIBLE);
             findFavouriteCuisine();
         }
     }
@@ -250,7 +263,7 @@ public class MysteryRecipeActivity extends AppCompatActivity {
 
     public void findMysteryRecipe()
     {
-        if(favouriteCuisine == "ESA")
+        if(favouriteCuisine == "ESA" && noCount < 30)
         {
             if(currentTimePeriod == "breakfast")
             {
@@ -273,7 +286,7 @@ public class MysteryRecipeActivity extends AppCompatActivity {
                 mysteryRecipeName = ESASnackNames[randomMysterySlot];
             }
         }
-        else if(favouriteCuisine == "SAM")
+        else if(favouriteCuisine == "SAM" && noCount < 30)
         {
             if(currentTimePeriod == "breakfast")
             {
@@ -296,7 +309,7 @@ public class MysteryRecipeActivity extends AppCompatActivity {
                 mysteryRecipeName = SAMSnackNames[randomMysterySlot];
             }
         }
-        else if(favouriteCuisine == "E")
+        else if(favouriteCuisine == "E" && noCount < 30)
         {
             if(currentTimePeriod == "breakfast")
             {
@@ -319,7 +332,7 @@ public class MysteryRecipeActivity extends AppCompatActivity {
                 mysteryRecipeName = ESnackNames[randomMysterySlot];
             }
         }
-        else if(favouriteCuisine == "LA")
+        else if(favouriteCuisine == "LA" && noCount < 30)
         {
             if(currentTimePeriod == "breakfast")
             {
@@ -342,7 +355,7 @@ public class MysteryRecipeActivity extends AppCompatActivity {
                 mysteryRecipeName = LASnackNames[randomMysterySlot];
             }
         }
-        else if(favouriteCuisine == "A")
+        else if(favouriteCuisine == "A" && noCount < 30)
         {
             if(currentTimePeriod == "breakfast")
             {
@@ -372,27 +385,43 @@ public class MysteryRecipeActivity extends AppCompatActivity {
         yesImageView.setVisibility(View.INVISIBLE);
         noImageView.setVisibility(View.INVISIBLE);
         findMysteryRecipe();
-        chosenRecipe.setVisibility(View.VISIBLE);
         chosenRecipe.setText(mysteryRecipeName);
 
         String favouriteCuisineFull = "";
-        if(favouriteCuisine.equals("ESA")){
-            favouriteCuisineFull = "East and Southeast Asian";
+
+        if(yesCount >= 30)
+        {
+            System.out.println("yes count" + yesCount);
+            chosenRecipe.setVisibility(View.VISIBLE);
+            recommendedRecipe.setVisibility(View.VISIBLE);
+            chooseFavouriteRecipe.setText("Randomly recommended recipe");
+        } else if (noCount >= 30)
+        {
+            System.out.println("no count" + noCount);
+            recommendedRecipe.setVisibility(View.INVISIBLE);
+            chosenRecipe.setVisibility(View.INVISIBLE);
+            chooseFavouriteRecipe.setText("No recommended recipe");
         }
-        else if(favouriteCuisine.equals("SAM")){
-            favouriteCuisineFull = "South Asian and Mediterranean";
+        else if (noCount < 30 && yesCount < 30){
+            chosenRecipe.setVisibility(View.VISIBLE);
+            if(favouriteCuisine.equals("ESA")){
+                favouriteCuisineFull = "East and Southeast Asian";
+            }
+            else if(favouriteCuisine.equals("SAM")){
+                favouriteCuisineFull = "South Asian and Mediterranean";
+            }
+            else if(favouriteCuisine.equals("E")){
+                favouriteCuisineFull = "European";
+            }
+            else if(favouriteCuisine.equals("LA")){
+                favouriteCuisineFull = "Latin American";
+            }
+            else if(favouriteCuisine.equals("A")){
+                favouriteCuisineFull = "American";
+            }
+            chooseFavouriteRecipe.setText("Time for " + currentTimePeriod + "\n" + "Favourite Cuisine: " + favouriteCuisineFull);
+            recommendedRecipe.setVisibility(View.VISIBLE);
         }
-        else if(favouriteCuisine.equals("E")){
-            favouriteCuisineFull = "European";
-        }
-        else if(favouriteCuisine.equals("LA")){
-            favouriteCuisineFull = "Latin American";
-        }
-        else if(favouriteCuisine.equals("A")){
-            favouriteCuisineFull = "American";
-        }
-        chooseFavouriteRecipe.setText("Time for " + currentTimePeriod + "\n" + "Favourite Cuisine: " + favouriteCuisineFull);
-        recommendedRecipe.setVisibility(View.VISIBLE);
     }
 
     public void shuffleRecipeImages()

@@ -122,10 +122,11 @@ public class AddRecipeActivity extends AppCompatActivity {
     {
         if(formValid())
         {
-            Integer timeInt = Integer.parseInt(timeString);
-            Integer pointsInt = Integer.parseInt(pointsString);
 
             try{
+                Integer timeInt = Integer.parseInt(timeString);
+                Integer pointsInt = Integer.parseInt(pointsString);
+
                 recipeUUID = UUID.randomUUID().toString();
 
                 final ProgressBar progressBar = new ProgressBar(this, null, android.R.attr.progressBarStyleLarge);

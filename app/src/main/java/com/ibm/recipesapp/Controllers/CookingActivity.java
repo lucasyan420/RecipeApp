@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.ibm.recipesapp.R;
@@ -270,6 +271,8 @@ public class CookingActivity extends AppCompatActivity {
 
     public void updateTotalPoints(View view)
     {
+        Toast.makeText(this, name + " recipe cooked, points have been added", Toast.LENGTH_LONG).show();
+
         initialiseTimer();
 
         Long secondsLeft = PrefUtil.getSecondsRemaining(this);

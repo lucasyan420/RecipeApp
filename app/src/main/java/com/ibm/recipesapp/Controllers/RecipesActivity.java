@@ -33,6 +33,7 @@ public class RecipesActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private TextView noRecipes;
     private ImageView noRecipesImage;
+    private TextView header;
 
     private recipesRecyclerAdapter.RecyclerViewClickListener listener;
     recipesRecyclerAdapter adapter;
@@ -62,6 +63,7 @@ public class RecipesActivity extends AppCompatActivity {
         noRecipes = findViewById(R.id.noRecipes_TextView_RecipesActivity);
         noRecipesImage = findViewById(R.id.cooking_ImageView_RecipesActivity);
         noRecipesImage.setVisibility(View.INVISIBLE);
+        header = findViewById(R.id.recipes_TextView_RecipesActivity);
         
         intentTime = (String) getIntent().getSerializableExtra("Time");
         
@@ -93,6 +95,8 @@ public class RecipesActivity extends AppCompatActivity {
                             }
                             setAdapter();
                             setPetImage(user);
+
+                            header.setText(user.getUserName() + "'s Recipes");
                         }
                     });
         } catch (Exception e)

@@ -294,7 +294,7 @@ public class PetActivity extends AppCompatActivity {
             user.setUserPet(pet);
             rewardTextView.setText(Integer.toString(pet.getPetPoints()));
             teddyBearCountTextview.setText(String.valueOf(pet.getPetTeddyBear().getTeddyBearAmount()));
-            Toast.makeText(getApplicationContext(), "You bought 1 teddy bear for " + pet.getPetName(), Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "You bought a teddy bear for " + pet.getPetName(), Toast.LENGTH_LONG).show();
             restoreImage();
         } else
         {
